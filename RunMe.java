@@ -1,10 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import Interfaces.SortingAlgorithm;
+import SortingAlgorithms.*;
+
 /**
  * Sorts
  */
-public class Sorts {
+public class RunMe {
 
     public static void main(String[] args) {
         int[] test1 = {5, 2, 5, 5, 3, 3, 3, 2, 2, 2, 6, 3, 3, 5};
@@ -12,6 +15,8 @@ public class Sorts {
         int[] test3 = {9, 8, 7, 6, 5, 4, 3, 2};
         int[] test4 = {3};
         int[] test5 = {};
+
+        ItaiSorting sortingAlgorithm = new ItaiSorting();
 
         ArrayList<int[]> tests = new ArrayList<>();
         tests.add(test1);
@@ -24,28 +29,9 @@ public class Sorts {
             int[] test = tests.get(i);
             System.out.println("===== Test #" + i + "=========");
             System.out.println("Before: " + Arrays.toString(test));
-            test = selectionSort(test);
+            test = sortingAlgorithm.sort(test);
             System.out.println("After: " + Arrays.toString(test));
             System.out.println("================================");
         }
     }
-
-    private static int[] selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length-1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
-                }
-            }
-
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
-        }
-
-        return arr;
-    }
-
-    
 }
