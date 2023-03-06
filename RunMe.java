@@ -17,10 +17,16 @@ public class RunMe {
         int[] test4 = {3};
         int[] test5 = {};
 
-        Circle[] circles = new Circle[10];
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        Comparable[] randomized = new Comparable[10];
 
         for (int i = 0; i < 10; i++) {
-            circles[i] = new Circle((int)(Math.random() * 99) + 1);
+            String text = "";
+            int length = (int)(Math.random() * 9 + 1);
+            for (int j = 0; j < length; j++) {
+                text += alphabet[(int)(Math.random() * randomized.length)];
+            }
+            randomized[i] = text;
         }
 
         // ArrayList<int[]> tests = new ArrayList<>();
@@ -42,17 +48,16 @@ public class RunMe {
         // }
 
         System.out.println("Circles before:");
-        System.out.println();
-        for (int i = 0; i < circles.length; i++) {
-            System.out.print(circles[i]+", ");
+        for (int i = 0; i < randomized.length; i++) {
+            System.out.print(randomized[i]+", ");
         }
 
-        new SelectionObj().sort(circles);
+        new SelectionObj().sort(randomized);
 
-        System.out.println("Circles After:");
         System.out.println();
-        for (int i = 0; i < circles.length; i++) {
-            System.out.print(circles[i]+", ");
+        System.out.println("Circles After:");
+        for (int i = 0; i < randomized.length; i++) {
+            System.out.print(randomized[i]+", ");
         }
     }
 }

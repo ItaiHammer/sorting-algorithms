@@ -4,7 +4,7 @@ import Classes.Circle;
 import Interfaces.SortingAlgorithm;
 
 public class SelectionObj implements SortingAlgorithm {
-    public Circle[] sort (Circle[] arr) {
+    public Comparable[] sort (Comparable[] arr) {
 
         for (int i = 0; i < arr.length-1; i++) {
             int minIndex = i;
@@ -14,7 +14,7 @@ public class SelectionObj implements SortingAlgorithm {
                 }
             }
 
-            Circle temp = arr[minIndex];
+            Comparable temp = arr[minIndex];
             arr[minIndex] = arr[i];
             arr[i] = temp;
         }
