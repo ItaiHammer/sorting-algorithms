@@ -17,28 +17,42 @@ public class RunMe {
         int[] test4 = {3};
         int[] test5 = {};
 
-        ArrayList<Circle> circles = new ArrayList<>();
+        Circle[] circles = new Circle[10];
 
         for (int i = 0; i < 10; i++) {
-            circles.add(new Circle((int)(Math.random() * 99) + 1))
+            circles[i] = new Circle((int)(Math.random() * 99) + 1);
         }
 
-        ArrayList<int[]> tests = new ArrayList<>();
-        tests.add(test1);
-        tests.add(test2);
-        tests.add(test3);
-        tests.add(test4);
-        tests.add(test5);
+        // ArrayList<int[]> tests = new ArrayList<>();
+        // tests.add(test1);
+        // tests.add(test2);
+        // tests.add(test3);
+        // tests.add(test4);
+        // tests.add(test5);
 
-        for( int i = 0; i < tests.size(); i++) {
-            int[] test = tests.get(i);
-            System.out.println("===== Test #" + i + "=========");
-            System.out.println("Before: " + Arrays.toString(test));
+        // for( int i = 0; i < tests.size(); i++) {
+        //     int[] test = tests.get(i);
+        //     System.out.println("===== Test #" + i + "=========");
+        //     System.out.println("Before: " + Arrays.toString(test));
             
             
 
-            System.out.println("After: " + Arrays.toString(test));
-            System.out.println("================================");
+        //     System.out.println("After: " + Arrays.toString(test));
+        //     System.out.println("================================");
+        // }
+
+        System.out.println("Circles before:");
+        System.out.println();
+        for (int i = 0; i < circles.length; i++) {
+            System.out.print(circles[i]+", ");
+        }
+
+        new SelectionObj().sort(circles);
+
+        System.out.println("Circles After:");
+        System.out.println();
+        for (int i = 0; i < circles.length; i++) {
+            System.out.print(circles[i]+", ");
         }
     }
 }

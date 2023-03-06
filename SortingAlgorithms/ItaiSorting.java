@@ -32,23 +32,9 @@ public class ItaiSorting implements SortingAlgorithm {
                     i++;
                 }
             }
-
-            // System.out.println("--------------");
-            // System.out.println("before swap");
-            // for (int j = 0; j < arr.length; j++) {
-            //     System.out.print(arr[i]+", ");
-            // }
-            // System.out.println();
     
             swap(arr, low, li - 1);
             swap(arr, hi + 1, high);
-
-            // System.out.println("--------------");
-            // System.out.println("after swap");
-            // for (int j = 0; j < arr.length; j++) {
-            //     System.out.print(arr[i]+", ");
-            // }
-            // System.out.println();
     
             loopSort(arr, low, li - 2);
             loopSort(arr, li, hi);

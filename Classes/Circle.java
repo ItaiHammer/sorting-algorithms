@@ -15,5 +15,10 @@ public class Circle implements Comparable {
     public int getRadius() {
         return radius;
     }
+
+    @Override
+    public String toString() {
+        return "Radius: " + radius;
+    }
     
 }
