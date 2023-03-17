@@ -16,18 +16,8 @@ public class RunMe {
         int[] test3 = {9, 8, 7, 6, 5, 4, 3, 2};
         int[] test4 = {3};
         int[] test5 = {};
-
-        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        Comparable[] randomized = new Comparable[10];
-
-        for (int i = 0; i < 10; i++) {
-            String text = "";
-            int length = (int)(Math.random() * 9 + 1);
-            for (int j = 0; j < length; j++) {
-                text += alphabet[(int)(Math.random() * randomized.length)];
-            }
-            randomized[i] = text;
-        }
+        
+        
 
         // ArrayList<int[]> tests = new ArrayList<>();
         // tests.add(test1);
@@ -47,17 +37,56 @@ public class RunMe {
         //     System.out.println("================================");
         // }
 
-        System.out.println("Circles before:");
-        for (int i = 0; i < randomized.length; i++) {
-            System.out.print(randomized[i]+", ");
+        // System.out.println("Circles before:");
+        // for (int i = 0; i < randomized.length; i++) {
+        //     System.out.print(randomized[i]+", ");
+        // }
+
+        // new SelectionObj().sort(randomized);
+
+        // System.out.println();
+        // System.out.println("Circles After:");
+        // for (int i = 0; i < randomized.length; i++) {
+        //     System.out.print(randomized[i]+", ");
+        // }
+
+        // int[] arr = {1, 2, 3, 4, 5};
+        // System.out.println();
+        // System.out.println(groupSum(0, arr, 16));
+    }
+
+    public static String insertStars (String s) {
+        if (s.length() == 2) {
+            return s.substring(0, 1) + "*" + s.substring(1);
+        }else if (s.length() <= 1) {
+            return s;
         }
 
-        new SelectionObj().sort(randomized);
+        return s.substring(0, 1) + "*" + insertStars(s.substring(1));
+    }
 
-        System.out.println();
-        System.out.println("Circles After:");
-        for (int i = 0; i < randomized.length; i++) {
-            System.out.print(randomized[i]+", ");
+    private static boolean groupSum (int s, int[] arr, int t) {
+        // base case
+        if (t == 0) {
+            return true;
         }
+
+        // end of array
+        if (s >= arr.length) {
+            return false;
+        }
+
+        // with current number
+        if (groupSum(s+1, arr, t - arr[s])) {
+            return true;
+        }
+
+        // without current number
+        if (groupSum(s+1, arr, t)) {
+            return true;
+        }
+
+        // exit
+        return false;
     }
 }
