@@ -16,6 +16,13 @@ public class RunMe {
         int[] test3 = {9, 8, 7, 6, 5, 4, 3, 2};
         int[] test4 = {3};
         int[] test5 = {};
+        int[] test6 = {3, 2, 1, 4, 5};
+
+        BetterMergeSort m = new BetterMergeSort();
+        int[] s = m.sort(test6);
+        for (int i = 0; i < s.length; i++) {
+            System.out.print(s[i]+", ");
+        }
         
         
 
