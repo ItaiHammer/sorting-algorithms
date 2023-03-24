@@ -8,7 +8,7 @@ import SortingAlgorithms.*;
 /**
  * Sorts
  */
-public class RunMe {
+public class Testing {
 
     public static void main(String[] args) {
         int[] test1 = {5, 2, 5, 5, 3, 3, 3, 2, 2, 2, 6, 3, 3, 5};

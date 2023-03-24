@@ -2,7 +2,7 @@ package SortingAlgorithms;
 
 import Interfaces.SortingAlgorithm;
 
-public class InsertionSort implements SortingAlgorithm {
+public class InsertionSortWhileLoop implements SortingAlgorithm {
     public int[] sort (int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int valToInsert = arr[i];
