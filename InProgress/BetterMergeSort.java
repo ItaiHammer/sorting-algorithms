@@ -1,4 +1,4 @@
-package SortingAlgorithms;
+package InProgress;
 
 import Interfaces.SortingAlgorithm;
 

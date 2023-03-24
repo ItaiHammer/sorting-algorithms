@@ -1,6 +1,3 @@
-package SortingAlgorithms;
-
-import Interfaces.SearchingAlgorithm;
 import Interfaces.SearchingAlgorithm;
 
 public class SequentialSearch implements SearchingAlgorithm {
