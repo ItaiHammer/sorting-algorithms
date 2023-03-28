@@ -1,4 +1,4 @@
-package InProgress;
+package SortingAlgorithms;
 
 import Interfaces.SortingAlgorithm;
 
@@ -29,31 +29,15 @@ public class BetterMergeSort implements SortingAlgorithm {
         int nextLoc = s1;
 
         while (leftIndex <= e1 || rightIndex <= e2) {
-            if (arr[leftIndex] < arr[rightIndex] || rightIndex >= e2) {
+            if (leftIndex <= e1 && (rightIndex > e2 || arr[leftIndex] <= arr[rightIndex])) {
                 temp[nextLoc] = arr[leftIndex];
                 leftIndex++;
-            } else if (leftIndex >= e1) {
+            } else {
                 temp[nextLoc] = arr[rightIndex];
                 rightIndex++;
             }
-            System.out.println(nextLoc);
-            System.out.println("LeftIndex: "+leftIndex+", e1: "+e1);
-            System.out.println("RightIndex: "+rightIndex+", e2: "+e2);
             nextLoc++;
         }
-
-        // if (leftIndex <= e1) {
-        //     for (int i = leftIndex; i <= e1; i++) {
-        //         temp[nextLoc] = arr[i];
-        //         nextLoc++;
-        //     }
-        // }
-        // if (rightIndex <= e2) {
-        //     for (int i = rightIndex; i <= e2; i++) {
-        //         temp[nextLoc] = arr[i];
-        //         nextLoc++;
-        //     }
-        // }
 
         for (int i = s1; i <= e2; i++) {
             arr[i] = temp[i];
